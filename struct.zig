@@ -1,4 +1,5 @@
 const std = @import("std");
+const expect = std.testing.expect;
 
 // declare a struct
 const Point = struct {
@@ -7,7 +8,7 @@ const Point = struct {
 };
 
 test "declaring a struct" {
-    try std.testing.expect(@sizeOf(Point) == @sizeOf(f64));
+    try expect(@sizeOf(Point) == @sizeOf(f64));
 }
 
 test "declare an instance of a struct" {
@@ -17,5 +18,5 @@ test "declare an instance of a struct" {
         .y = undefined,
     };
 
-    try std.testing.expect(p.x == 0.12);
+    try expect(p.x == 0.12);
 }
